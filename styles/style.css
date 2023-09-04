@@ -1,16 +1,13 @@
 /* место для вашего кода */
 
 .header {
-    width: 1340px;
-    height: 109px;
-    margin: 92px 49px 92px 51px;
+    max-width: 1340px;
+    margin: 92px 50px;
     display: grid;
-    grid-template-columns: 1fr 148px 1fr;
+    grid-template-columns: 1fr min-content 1fr;
 }
 
 .header__menu {
-    width: 388px;
-    height: 23px;
     align-self: center;
     padding: 0;
     color:#000000;
@@ -28,6 +25,10 @@
     list-style-type: none;
 }
 
+.header__link {
+    text-decoration: none;
+}
+
 .header__link_active {
     text-decoration: underline;
     text-underline-position: under;
@@ -35,45 +36,50 @@
 }
 
 .header__logo {
-    width: 148px;  
+    display: block;
+    width: 141px;
     height: 105px;
-    margin: 0 0 0 4px;
 }
 
 .address {
-    width: 240px;
-    height: 97px;
+    max-width: 240px;
     color: #000;
-    font-family: Raleway;
+    font-family: Raleway, Arial, sans-serif;
     font-size: 18px;
     font-style: normal;
     font-weight: 400;
     line-height: 24.3px;
-    justify-self: end;   
+    margin: 5px 0 0;
+}
+
+.address_end {
+    justify-self: end;
 }
 
 .cover {
-    width: 1440px;
-    height: 757px;
+    max-width: 1440px;
+    width: 100%;
     background-image: url(../images/cover.jpg);
     background-size: cover;
     background-position: center;
     position: relative;
+    padding: 165px 0 50px 50px;
 }
 
 .overlay {
     width: 100%;
     height: 100%;
     position: absolute;
+    top: 0;
+    left: 0;
     opacity: 0.6;
     background: #000;
 }
 
 .cover__title {
-    width: 1340px;
-    height: 355px;
+    max-width: 1340px;
+    width: 100%;
     position: relative;
-    inset: 165px 50px 0 50px;
     z-index: 1;
     font-size: 100px;
     font-weight: bold;
@@ -83,6 +89,7 @@
     flex-direction: column;
     gap: 20px;
     letter-spacing: 30px;
+    margin: 0 0 140px;
 }   
 
 .aligned-text {
@@ -93,13 +100,11 @@
 
 .aligned-text_center {
     text-align: center;
-    display: block;
     line-height: 100%;
 }
 
 .aligned-text_right {
     text-align: right;
-    display: block;
     line-height: 100%;
 }
 
@@ -117,7 +122,6 @@
     justify-content: end;
     align-items: center;
     gap: 78px;
-    padding: 299px 0; 
     z-index: 1; 
 }
 
@@ -134,19 +138,18 @@
     appearance: none;
     padding: 12px 31px;
     margin-right: 50px;
-    border: 1px solid #FFF;
+    border: 1px solid currentColor;
     width: 257px;
     height: 52px;
     background-color: transparent; 
-    font-family: Raleway;
+    font-family: Raleway, Arial, sans-serif;
     font-size: 22px;
     text-transform: uppercase;
     color:#FFF;
 }
 
 .lots {
-    width: 1340px;
-    height: 579px;
+    max-width: 1340px;
     margin: 180px 50px 0 50px;
 }
 
@@ -162,46 +165,25 @@
 .lots__card-list {
     display: flex;
     justify-content: space-between;
+    column-gap: 25px;
     flex-wrap: wrap;
     margin: 27px 0;
+    list-style: none;
+    
 }
 
 .lots__card-list-item {
-    max-width: 430px;
+    width: 430px; 
     min-height: 450px;
     flex-grow: 1;
+    
 }
 
-.card_type_film {
-    background-image: url(../images/card-lot-01.jpg);
-    background-size: cover;
-    width: 430px;
-    height: 450px;
-    height: 100%;
+.card-link { 
     display: block;
     text-decoration: none;
-}
-
-.card_type_book {
-    background-image: url(../images/card-lot-02.jpg);
-    background-size: cover;
-    width: 430px;
-    height: 450px;
     height: 100%;
-    display: block;
-    text-decoration: none;
-}
-
-
-.card_type_picture {
-   background-image: url(../images/card-lot-03.jpg);
-   background-size: cover;
-    width: 430px;
-    height: 450px;
-    height: 100%;
-    display: block;
-    text-decoration: none;
-}
+} 
 
 .card {
     height: 100%;
@@ -209,8 +191,26 @@
     flex-direction: column;
     align-items: center;
     justify-content: space-between;
+    background-size: cover;
+    text-decoration: none;
     position: relative;
+    background-position: center;
+    background-size: cover;
+    
 }
+
+.card_type_film {
+    background-image: url(../images/card-lot-01.jpg);
+}
+
+.card_type_book {
+    background-image: url(../images/card-lot-02.jpg);
+   
+}
+
+.card_type_picture {
+    background-image: url(../images/card-lot-03.jpg);
+} 
 
 .card__title {
     padding: 50px 40px 0 40px;
@@ -238,15 +238,12 @@
     font-size: 20px;
     font-weight: 400;
     text-decoration: underline;
-    width: 191px;
-    height: 1px;
     text-underline-position: under;
 }
 
 .about {
     margin: 183px 50px 0 50px;
-    width: 1340px;
-    height: 487px; 
+    max-width: 1340px;
     display: grid;
     grid-template-columns: 430px 2fr;
     column-gap: 25px;
@@ -266,13 +263,13 @@
     height: 114px;
 }
 
-.about__column_two {
+.about__column_column {
     display: flex;
     flex-direction: column;
 }
 
 .about__titl {
-    padding: 100px 594px 0 0;
+    padding: 100px 0;
     color: #000;
     font-size: 40px;
     font-weight: 700;
@@ -292,50 +289,43 @@
 
 .footer {
     margin: 180px 50px 90px 50px;
-    width: 1340px;
-    height: 97px;
+    max-width: 1340px;
     display: grid;
-    grid-template-columns: 1fr 149px 1fr;
-}
-
-.address__tow {
-    color: #000;
-    font-family: Raleway;
-    font-size: 18px;
-    font-style: normal;
-    font-weight: 400;
-    line-height: 24.3px; 
+    grid-template-columns: 1fr min-content 1fr;
 }
 
 .footer__menu-list-item {
     color: #000;
-    font-family: Raleway;
+    font-family: Raleway, Arial, sans-serif;
     font-size: 18px;
     font-style: normal;
     font-weight: 400;
     line-height: 24.3px; 
+    white-space: nowrap;
     text-align: center;
     line-height: normal;
     list-style-type: none;
 }
 
-.footer__menu-link_active {
-    cursor: pointer;
-
-}
-
 .footer__menu-link {
     text-decoration: underline;
     text-underline-position: under;
+    cursor: pointer;
+}
+
+.footer__menu-link_active {
+    text-decoration: none;
+    cursor: pointer;
 }
 
 .footer__social-list {
-    width: 240px;
-    height: 48px;
     display: flex;
     justify-self: end;
     gap: 48px;
     list-style-type: none;
 }
 
+.footer__social-icon {
+    width: 48px;
+}
 
