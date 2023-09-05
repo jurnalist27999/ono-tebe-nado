@@ -165,7 +165,7 @@
 .lots__card-list {
     display: flex;
     justify-content: space-between;
-    column-gap: 25px;
+    gap: 25px;
     flex-wrap: wrap;
     margin: 27px 0;
     list-style: none;
@@ -195,8 +195,6 @@
     text-decoration: none;
     position: relative;
     background-position: center;
-    background-size: cover;
-    
 }
 
 .card_type_film {
@@ -327,5 +325,6 @@
 
 .footer__social-icon {
     width: 48px;
+    height: 48px;
 }
 
